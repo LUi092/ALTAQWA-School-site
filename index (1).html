@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>موقع المدرسة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#133121;--cream:#e5e1d5;--green:#236c22;--gold:#96590f;--sage:#779e76;
+--bg:#e5e1d5;--surface:#f3f0e8;--text:#133121;--line:#c9c4b3;--mut:#4a5d50;--acc:#96590f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d2016;--surface:#133121;--text:#e5e1d5;--line:#2c4a38;--mut:#a9b8ac;--acc:#d49a52;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d2016;--surface:#133121;--text:#e5e1d5;--line:#2c4a38;--mut:#a9b8ac;--acc:#d49a52;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Cairo,Tahoma,sans-serif;line-height:1.8}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--ink);color:#e5e1d5;display:flex;align-items:center;gap:16px;padding:10px 20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;margin-inline-end:auto}
+.logo{width:56px;height:60px;border-radius:12px;border:2px dashed #779e76;display:grid;place-items:center;font-size:11px;color:#779e76;flex:none}
+.brand b{display:block;font-weight:800;font-size:18px;line-height:1.2}
+.brand small{color:#779e76;font-size:12px}
+nav{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+nav button{font:inherit;font-size:14px;font-weight:600;background:none;border:0;color:#e5e1d5;padding:6px 14px;border-radius:20px;cursor:pointer;white-space:nowrap}
+nav button[aria-current=true]{background:#236c22}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #d49a52;outline-offset:2px}
+main{max-width:1000px;margin:0 auto;padding:28px 20px 48px}
+section[hidden]{display:none}
+h1,h2,h3{font-weight:800;line-height:1.35;margin:0 0 12px}
+h2{font-size:28px;color:var(--text)}
+h3{font-size:20px;color:var(--acc)}
+.lead{color:var(--mut);margin:0 0 24px;max-width:60ch}
+.ph{border:2px dashed var(--sage);border-radius:12px;display:grid;place-items:center;text-align:center;color:var(--mut);font-size:14px;padding:12px;background:color-mix(in srgb,var(--sage) 12%,transparent)}
+[data-img] img{width:100%;height:100%;object-fit:cover;display:block}
+.logo.has{background:#f3f0e8!important;padding:3px!important;border-radius:12px;width:56px;height:60px}
+.logo img{object-fit:contain}
+.has{border:0!important;padding:0!important;overflow:hidden;background:none!important}
+/* home */
+.hero{background:var(--ink);color:#e5e1d5;border-radius:20px;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:36px;align-items:center;margin-bottom:28px}
+.hero h1{font-size:36px;margin-bottom:10px}
+.hero p{color:#c9d3c9;margin:0 0 18px;max-width:46ch}
+.arch.has{background:#f3e6dc!important}
+.arch{aspect-ratio:4/3;border-radius:90px 90px 14px 14px;border:3px solid #96590f;outline:2px solid #779e76;outline-offset:6px;background:#1b4630;color:#779e76;display:grid;place-items:center;text-align:center;padding:16px;max-width:460px;justify-self:center;width:100%}
+.stamp{display:inline-flex;align-items:center;gap:12px;border:1.5px solid #96590f;border-radius:999px;padding:6px 20px 6px 10px;color:#e5e1d5;font-size:13px}
+.stamp i.has{border-radius:50%}
+.stamp i{width:64px;height:64px;border-radius:50%;border:2px dashed #779e76;display:grid;place-items:center;font-size:9px;font-style:normal;color:#779e76}
+.btn{font:inherit;font-weight:600;background:#236c22;color:#fff;border:0;border-radius:10px;padding:10px 22px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.tile{font:inherit;text-align:start;background:var(--surface);border:1px solid var(--line);border-inline-start:6px solid var(--green);border-radius:10px;padding:16px 18px;cursor:pointer;color:var(--text)}
+.tile:nth-child(even){border-inline-start-color:var(--gold)}
+.tile b{display:block;font-size:18px}.tile span{color:var(--mut);font-size:14px}
+/* registration */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{font:inherit;font-weight:600;background:var(--surface);color:var(--text);border:1.5px solid var(--green);border-radius:10px;padding:10px 18px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--green);color:#fff}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 62px 24px 0;min-height:56px}
+ol.steps li::before{content:counter(s);position:absolute;right:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:grid;place-items:center}
+ol.steps li::after{content:"";position:absolute;right:20px;top:46px;bottom:4px;width:2px;background:var(--sage)}
+ol.steps li:last-child::after{display:none}
+ol.steps b{display:block;font-size:17px}
+ol.steps small{display:block;color:var(--mut);font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px}
+/* tables */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--ink);color:#e5e1d5;font-weight:600;padding:8px 12px;text-align:start}
+td{padding:8px 12px;border-bottom:1px solid var(--line)}
+.card .ph{aspect-ratio:3/4;margin-bottom:14px}
+/* faq */
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;padding:14px 18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--acc);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 18px 16px;color:var(--mut)}
+/* contact */
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:20px}
+.cg div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.cg b{display:block;color:var(--acc)}
+.map{height:260px}
+footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-size:13px}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding:24px}.hero h1{font-size:28px}.arch{max-width:220px}header{padding:10px 14px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo" data-img="logo">الشعار</div><div><b>مدارس التقوى الأهلية للبنات</b><small>المرحلتان المتوسطة والثانوية</small></div></div>
+ <nav id="nav" aria-label="التنقل الرئيسي"></nav>
+</header>
+<main>
+<section id="home">
+ <div class="hero">
+  <div>
+   <h1>مرحبًا بكم في مدارس التقوى</h1>
+   <p>تعرّفي على خطوات التسجيل والرسوم الدراسية والزي المدرسي في مكان واحد.</p>
+   <button class="btn" data-go="reg">ابدئي التسجيل</button>
+   <div style="margin-top:22px"><span class="stamp"><i data-img="stamp">الختم</i>حاصلة على الاعتماد الوطني المدرسي</span></div>
+  </div>
+  <div class="arch" data-img="school">صورة المدرسة من الخارج</div>
+ </div>
+ <div class="grid" id="tiles"></div>
+</section>
+
+<section id="reg" hidden>
+ <h2>آلية التسجيل</h2>
+ <p class="lead">اختاري حالتك لتظهر لك الخطوات المطلوبة بالترتيب.</p>
+ <div class="tabs" id="tabs"></div>
+ <h3 id="ptitle"></h3>
+ <ol class="steps" id="steps"></ol>
+</section>
+
+<section id="fees" hidden>
+ <h2>الرسوم الدراسية</h2>
+ <p class="lead">الرسوم السنوية لكل مرحلة.</p>
+ <div class="two">
+  <div class="card"><h3>المرحلة المتوسطة</h3><table><tr><th>الصف</th><th>الرسوم</th></tr><tr><td>الأول المتوسط</td><td>—</td></tr><tr><td>الثاني المتوسط</td><td>—</td></tr><tr><td>الثالث المتوسط</td><td>—</td></tr></table></div>
+  <div class="card"><h3>المرحلة الثانوية</h3><table><tr><th>الصف</th><th>الرسوم</th></tr><tr><td>الأول الثانوي</td><td>—</td></tr><tr><td>الثاني الثانوي</td><td>—</td></tr><tr><td>الثالث الثانوي</td><td>—</td></tr></table></div>
+ </div>
+</section>
+
+<section id="uniform" hidden>
+ <h2>رسوم الزي المدرسي</h2>
+ <p class="lead">صور الزي وأسعار القطع لكل مرحلة.</p>
+ <div class="two">
+  <div class="card"><h3>زي المرحلة المتوسطة</h3><div class="ph" data-img="uniform-middle">صورة زي المرحلة المتوسطة</div><table><tr><th>القطعة</th><th>السعر</th></tr><tr><td>الزي الرسمي</td><td>—</td></tr><tr><td>الزي الرياضي</td><td>—</td></tr></table></div>
+  <div class="card"><h3>زي المرحلة الثانوية</h3><div class="ph" data-img="uniform-secondary">صورة زي المرحلة الثانوية</div><table><tr><th>القطعة</th><th>السعر</th></tr><tr><td>الزي الرسمي</td><td>—</td></tr><tr><td>الزي الرياضي</td><td>—</td></tr></table></div>
+ </div>
+</section>
+
+<section id="faq" hidden>
+ <h2>الأسئلة المتكررة</h2>
+ <p class="lead">إجابات على أكثر الأسئلة التي تصلنا.</p>
+ <details><summary>ما الأوراق المطلوبة للتسجيل؟</summary><p>للطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة. لغير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.</p></details>
+ <details><summary>هل يوجد اختبار قبول؟</summary><p>الطالبات الدارسات في السفارات والجمعيات الخيرية يُعقد لهن اختبار في آخر مرحلة درسنها، وعلى أساسه يُحدَّد الصف المناسب.</p></details>
+ <details><summary>ما مواعيد المقابلات الشخصية؟</summary><p>اكتبي هنا مواعيد المقابلات.</p></details>
+ <details><summary>هل يمكن سداد الرسوم على دفعات؟</summary><p>اكتبي هنا الإجابة.</p></details>
+ <details><summary>هل المدرسة معتمدة؟</summary><p>نعم، المدرسة حاصلة على الاعتماد الوطني المدرسي من المركز الوطني للتقويم والتميز المدرسي (تميز).</p></details>
+ <details><summary>ما مواعيد الدوام؟</summary><p>اكتبي هنا مواعيد الدوام.</p></details>
+ <details><summary>كيف أتواصل مع الوكيلة؟</summary><p>عبر وسائل التواصل الموضحة في صفحة التواصل.</p></details>
+</section>
+
+<section id="contact" hidden>
+ <h2>وسائل التواصل</h2>
+ <p class="lead">يسعدنا استقبال استفساراتكم.</p>
+ <div class="cg">
+  <div><b>الهاتف</b>رقم الهاتف</div><div><b>واتساب</b>رقم الواتساب</div><div><b>البريد الإلكتروني</b>البريد</div><div><b>العنوان</b>عنوان المدرسة</div><div><b>حسابات التواصل</b>إنستغرام / إكس / سناب</div>
+ </div>
+ <div class="ph map">خريطة موقع المدرسة</div>
+</section>
+</main>
+<footer>جميع الحقوق محفوظة لمدارس التقوى الأهلية للبنات</footer>
+
+<script>
+var D='الطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة. غير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.';
+var P=[
+{t:'الطالبات المنتقلات من داخل المملكة',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['مراجعة المدرسة السابقة لاستكمال إجراءات النقل'],['العودة إلينا بالأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
+{t:'الطالبات القادمات من خارج المملكة',s:[['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['معادلة الشهادة في وزارة التعليم'],['إحضار الشهادة بعد المعادلة مع الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
+{t:'الطالبات الدارسات في السفارات والجمعيات الخيرية',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['بعد اجتياز المقابلة يُعقد اختبار في آخر مرحلة دراسية تمت دراستها، وعلى ضوئه يُحدَّد المستوى والصف المقبولة فيه'],['إحضار الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]}];
+var N=[['home','الرئيسية',''],['reg','آلية التسجيل','ثلاثة مسارات حسب حالة الطالبة'],['fees','الرسوم الدراسية','المتوسطة والثانوية'],['uniform','رسوم الزي المدرسي','صور وأسعار لكل مرحلة'],['faq','الأسئلة المتكررة','إجابات سريعة'],['contact','وسائل التواصل','الهاتف والموقع والحسابات']];
+var nav=document.getElementById('nav'),tiles=document.getElementById('tiles');
+N.forEach(function(n,i){var b=document.createElement('button');b.textContent=n[1];b.dataset.go=n[0];nav.appendChild(b);
+ if(i){var t=document.createElement('button');t.className='tile';t.dataset.go=n[0];t.innerHTML='<b>'+n[1]+'</b><span>'+n[2]+'</span>';tiles.appendChild(t);}});
+function go(id){N.forEach(function(n){document.getElementById(n[0]).hidden=n[0]!==id});
+ [].forEach.call(nav.children,function(b){b.setAttribute('aria-current',b.dataset.go===id)});window.scrollTo(0,0)}
+document.addEventListener('click',function(e){var g=e.target.closest('[data-go]');if(g)go(g.dataset.go)});
+var tabs=document.getElementById('tabs'),steps=document.getElementById('steps');
+function show(k){[].forEach.call(tabs.children,function(b,i){b.setAttribute('aria-pressed',i===k)});
+ document.getElementById('ptitle').textContent=P[k].t;
+ steps.innerHTML=P[k].s.map(function(s){return '<li><b>'+s[0]+'</b>'+(s[1]?'<small>'+s[1]+'</small>':'')+'</li>'}).join('')}
+P.forEach(function(p,i){var b=document.createElement('button');b.textContent=p.t;b.onclick=function(){show(i)};tabs.appendChild(b)});
+show(0);go('home');
+document.querySelectorAll('[data-img]').forEach(function(el){var n=el.dataset.img,e=['jpg','png','jpeg','webp'],i=0,a=el.textContent;(function t(){if(i>=e.length)return;var m=new Image();m.onload=function(){m.alt=a;el.textContent='';el.appendChild(m);el.classList.add('has')};m.onerror=function(){i++;t()};m.src=n+'.'+e[i]})()});
+</script>
+</body>
+</html>
