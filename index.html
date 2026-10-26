@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>مدارس التقوى الأهلية للبنات</title>
+<title>مدارس التقوى الأهلية الشاملة</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#133121;--cream:#e5e1d5;--green:#236c22;--gold:#96590f;--sage:#779e76;
@@ -35,6 +35,22 @@ h3{font-size:20px;color:var(--acc)}
 .logo.has{background:#f3f0e8!important;padding:3px!important;border-radius:12px;width:56px;height:60px}
 .logo img{object-fit:contain}
 .has{border:0!important;padding:0!important;overflow:hidden;background:none!important}
+.mq{background:#236c22;color:#e5e1d5;overflow:hidden;direction:ltr;white-space:nowrap;font-weight:600;font-size:15px;padding:7px 0}
+.mqt{display:flex;width:max-content;animation:mq 45s linear infinite}
+.mqt:hover{animation-play-state:paused}
+.mqg{display:flex;gap:26px;padding-inline-end:26px}
+.mqg span{direction:rtl;unicode-bidi:isolate}.mqg b{color:#d9b27a;font-weight:400}
+@keyframes mq{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.mqt{animation:none}}
+ol.steps small span{display:block}
+.cg a{color:inherit;text-decoration:none;display:inline-block;white-space:nowrap}.cg a:hover{text-decoration:underline}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.callfab{position:fixed;inset-inline-end:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:8;display:flex;align-items:center;gap:8px;background:#236c22;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 20px 12px 18px;border-radius:999px;border:2px solid #d9b27a;box-shadow:0 6px 18px rgba(19,49,33,.4);animation:pulse 2.8s infinite}
+.callfab:hover{background:#1c5a1b}
+.callfab svg{width:22px;height:22px;fill:currentColor;flex:none}
+@keyframes pulse{0%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 0 rgba(35,108,34,.55)}70%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 16px rgba(35,108,34,0)}100%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 0 rgba(35,108,34,0)}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.callfab{animation:none}}
 /* home */
 .hero{background:var(--ink);color:#e5e1d5;border-radius:20px;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:36px;align-items:center;margin-bottom:28px}
 .hero h1{font-size:36px;margin-bottom:10px}
@@ -74,7 +90,7 @@ summary::after{content:"+";color:var(--acc);font-size:22px;line-height:1}
 details[open] summary::after{content:"\2212"}
 details p{margin:0;padding:0 18px 16px;color:var(--mut)}
 /* contact */
-.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:20px}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:20px}
 .cg div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .cg b{display:block;color:var(--acc)}
 .map{height:260px}
@@ -84,17 +100,18 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
 </head>
 <body>
 <header>
- <div class="brand"><div class="logo" data-img="logo">الشعار</div><div><b>مدارس التقوى الأهلية للبنات</b><small>المرحلتان المتوسطة والثانوية</small></div></div>
+ <div class="brand"><div class="logo" data-img="logo">الشعار</div><div><b>مدارس التقوى الأهلية الشاملة</b><small>المرحلتان المتوسطة والثانوية</small></div></div>
  <nav id="nav" aria-label="التنقل الرئيسي"></nav>
 </header>
+<div class="mq" id="mq" role="marquee" aria-label="عبارة ترحيبية"></div>
 <main>
 <section id="home">
  <div class="hero">
   <div>
-   <h1>مرحبًا بكم في مدارس التقوى</h1>
+   <h1>مرحبًا بكم في مدارس التقوى الأهلية الشاملة</h1>
    <p>تعرّفي على خطوات التسجيل والرسوم الدراسية والزي المدرسي في مكان واحد.</p>
    <button class="btn" data-go="reg">ابدئي التسجيل</button>
-   <div style="margin-top:22px"><span class="stamp"><i data-img="stamp">الختم</i>حاصلة على الاعتماد الوطني المدرسي</span></div>
+   <div style="margin-top:22px"><span class="stamp"><i data-img="stamp">الختم</i>حاصلة على الاعتماد المدرسي الوطني</span></div>
   </div>
   <div class="arch" data-img="school">صورة المدرسة من الخارج</div>
  </div>
@@ -113,17 +130,17 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
  <h2>الرسوم الدراسية</h2>
  <p class="lead">الرسوم السنوية لكل مرحلة.</p>
  <div class="two">
-  <div class="card"><h3>المرحلة المتوسطة</h3><table><tr><th>الصف</th><th>الرسوم</th></tr><tr><td>الأول المتوسط</td><td>—</td></tr><tr><td>الثاني المتوسط</td><td>—</td></tr><tr><td>الثالث المتوسط</td><td>—</td></tr></table></div>
-  <div class="card"><h3>المرحلة الثانوية</h3><table><tr><th>الصف</th><th>الرسوم</th></tr><tr><td>الأول الثانوي</td><td>—</td></tr><tr><td>الثاني الثانوي</td><td>—</td></tr><tr><td>الثالث الثانوي</td><td>—</td></tr></table></div>
+  <div class="card"><h3>المرحلة المتوسطة</h3><table><tr><th>الفئة</th><th>الرسوم السنوية</th></tr><tr><td>الطالبة السعودية</td><td>—</td></tr><tr><td>الطالبة غير السعودية</td><td>—</td></tr></table></div>
+  <div class="card"><h3>المرحلة الثانوية</h3><table><tr><th>الفئة</th><th>الرسوم السنوية</th></tr><tr><td>الطالبة السعودية</td><td>—</td></tr><tr><td>الطالبة غير السعودية</td><td>—</td></tr></table></div>
  </div>
 </section>
 
 <section id="uniform" hidden>
  <h2>رسوم الزي المدرسي</h2>
- <p class="lead">صور الزي وأسعار القطع لكل مرحلة.</p>
+ <p class="lead">سعر الزي المدرسي لكل مرحلة.</p>
  <div class="two">
-  <div class="card"><h3>زي المرحلة المتوسطة</h3><div class="ph" data-img="uniform-middle">صورة زي المرحلة المتوسطة</div><table><tr><th>القطعة</th><th>السعر</th></tr><tr><td>الزي الرسمي</td><td>—</td></tr><tr><td>الزي الرياضي</td><td>—</td></tr></table></div>
-  <div class="card"><h3>زي المرحلة الثانوية</h3><div class="ph" data-img="uniform-secondary">صورة زي المرحلة الثانوية</div><table><tr><th>القطعة</th><th>السعر</th></tr><tr><td>الزي الرسمي</td><td>—</td></tr><tr><td>الزي الرياضي</td><td>—</td></tr></table></div>
+  <div class="card"><h3>زي المرحلة المتوسطة</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td>—</td></tr></table></div>
+  <div class="card"><h3>زي المرحلة الثانوية</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td>—</td></tr></table></div>
  </div>
 </section>
 
@@ -132,10 +149,10 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
  <p class="lead">إجابات على أكثر الأسئلة التي تصلنا.</p>
  <details><summary>ما الأوراق المطلوبة للتسجيل؟</summary><p>للطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة. لغير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.</p></details>
  <details><summary>هل يوجد اختبار قبول؟</summary><p>الطالبات الدارسات في السفارات والجمعيات الخيرية يُعقد لهن اختبار في آخر مرحلة درسنها، وعلى أساسه يُحدَّد الصف المناسب.</p></details>
- <details><summary>ما مواعيد المقابلات الشخصية؟</summary><p>اكتبي هنا مواعيد المقابلات.</p></details>
- <details><summary>هل يمكن سداد الرسوم على دفعات؟</summary><p>اكتبي هنا الإجابة.</p></details>
+ <details><summary>ما مواعيد المقابلات الشخصية؟</summary><p>أثناء الدوام الرسمي.</p></details>
+ <details><summary>هل يمكن سداد الرسوم على دفعات؟</summary><p>نعم، يمكن ذلك.</p></details>
+ <details><summary>هل يوجد خصم للأخوات؟</summary><p>نعم، يوجد خصم للأخوات.</p></details>
  <details><summary>هل المدرسة معتمدة؟</summary><p>نعم، المدرسة حاصلة على الاعتماد الوطني المدرسي من المركز الوطني للتقويم والتميز المدرسي (تميز).</p></details>
- <details><summary>ما مواعيد الدوام؟</summary><p>اكتبي هنا مواعيد الدوام.</p></details>
  <details><summary>كيف أتواصل مع الوكيلة؟</summary><p>عبر وسائل التواصل الموضحة في صفحة التواصل.</p></details>
 </section>
 
@@ -143,20 +160,22 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
  <h2>وسائل التواصل</h2>
  <p class="lead">يسعدنا استقبال استفساراتكم.</p>
  <div class="cg">
-  <div><b>الهاتف</b>رقم الهاتف</div><div><b>واتساب</b>رقم الواتساب</div><div><b>البريد الإلكتروني</b>البريد</div><div><b>العنوان</b>عنوان المدرسة</div><div><b>حسابات التواصل</b>إنستغرام / إكس / سناب</div>
+  <div><b>الهاتف</b><a href="tel:0126320303" dir="ltr">0126320303</a><br><a href="tel:0126326947" dir="ltr">0126326947</a></div><div><b>الجوال</b><a href="tel:0235513055" dir="ltr">0235513055</a></div><div><b>البريد الإلكتروني</b><a href="mailto:E-ALTAQWA@HOTMAIL.COM" dir="ltr">E-ALTAQWA@HOTMAIL.COM</a></div><div><b>العنوان</b>عنوان المدرسة</div><div><b>حسابنا على إكس</b><a href="https://x.com/TAKWASCHOOL" target="_blank" rel="noopener" dir="ltr">@TAKWASCHOOL</a></div>
  </div>
  <iframe class="map" title="موقع المدرسة على الخريطة" style="width:100%;border:0;border-radius:12px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.3463207842615!2d39.22379321909199!3d21.4941507387898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3ce66caf74677%3A0x68797052d8c22c91!2z2YXYr9ix2LPYqSDYp9mE2KrZgtmI2Ykg2KfZhNij2YfZhNmK2Kkg2YXYqtmI2LPYtyDYq9in2YbZiNmKINmE2YTYqNmG2KfYqg!5e0!3m2!1sar!2ssa!4v1792966182918!5m2!1sar!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
 </main>
-<footer>جميع الحقوق محفوظة لمدارس التقوى الأهلية للبنات</footer>
+<a class="callfab" href="tel:0235513055" aria-label="اتصل بالمدرسة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg><span>اتصل بنا</span></a>
 
 <script>
-var D='الطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة. غير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.';
+var io=('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1}):null;
+function mark(l){if(!io)return;[].forEach.call(l,function(el){var i=[].indexOf.call(el.parentNode.children,el);el.classList.add('rv');el.style.setProperty('--d',(i%6)*.09+'s');io.observe(el)})}
+var D='الطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة.|غير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.';
 var P=[
 {t:'الطالبات المنتقلات من داخل المملكة',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['مراجعة المدرسة السابقة لاستكمال إجراءات النقل'],['العودة إلينا بالأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
 {t:'الطالبات القادمات من خارج المملكة',s:[['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['معادلة الشهادة في وزارة التعليم'],['إحضار الشهادة بعد المعادلة مع الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
 {t:'الطالبات الدارسات في السفارات والجمعيات الخيرية',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['بعد اجتياز المقابلة يُعقد اختبار في آخر مرحلة دراسية تمت دراستها، وعلى ضوئه يُحدَّد المستوى والصف المقبولة فيه'],['إحضار الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]}];
-var N=[['home','الرئيسية',''],['reg','آلية التسجيل','ثلاثة مسارات حسب حالة الطالبة'],['fees','الرسوم الدراسية','المتوسطة والثانوية'],['uniform','رسوم الزي المدرسي','صور وأسعار لكل مرحلة'],['faq','الأسئلة المتكررة','إجابات سريعة'],['contact','وسائل التواصل','الهاتف والموقع والحسابات']];
+var N=[['home','الرئيسية',''],['reg','آلية التسجيل','ثلاثة مسارات حسب حالة الطالبة'],['fees','الرسوم الدراسية','المتوسطة والثانوية'],['uniform','رسوم الزي المدرسي','سعر الزي لكل مرحلة'],['faq','الأسئلة المتكررة','إجابات سريعة'],['contact','وسائل التواصل','الهاتف والموقع والحسابات']];
 var nav=document.getElementById('nav'),tiles=document.getElementById('tiles');
 N.forEach(function(n,i){var b=document.createElement('button');b.textContent=n[1];b.dataset.go=n[0];nav.appendChild(b);
  if(i){var t=document.createElement('button');t.className='tile';t.dataset.go=n[0];t.innerHTML='<b>'+n[1]+'</b><span>'+n[2]+'</span>';tiles.appendChild(t);}});
@@ -166,9 +185,11 @@ document.addEventListener('click',function(e){var g=e.target.closest('[data-go]'
 var tabs=document.getElementById('tabs'),steps=document.getElementById('steps');
 function show(k){[].forEach.call(tabs.children,function(b,i){b.setAttribute('aria-pressed',i===k)});
  document.getElementById('ptitle').textContent=P[k].t;
- steps.innerHTML=P[k].s.map(function(s){return '<li><b>'+s[0]+'</b>'+(s[1]?'<small>'+s[1]+'</small>':'')+'</li>'}).join('')}
+ steps.innerHTML=P[k].s.map(function(s){return '<li><b>'+s[0]+'</b>'+(s[1]?'<small>'+s[1].split('|').map(function(x){return '<span>• '+x+'</span>'}).join('')+'</small>':'')+'</li>'}).join('');mark(steps.children)}
 P.forEach(function(p,i){var b=document.createElement('button');b.textContent=p.t;b.onclick=function(){show(i)};tabs.appendChild(b)});
 show(0);go('home');
+mark(document.querySelectorAll('.tile,.card,details,.cg>div'));
+(function(){var g='';for(var i=0;i<4;i++)g+='<span>بيئة تعليمية محفزة بقيم راسخة ومهارات تُبنى من أول خطوة</span><b>◆</b>';document.getElementById('mq').innerHTML='<div class="mqt"><div class="mqg">'+g+'</div><div class="mqg" aria-hidden="true">'+g+'</div></div>'})();
 document.querySelectorAll('[data-img]').forEach(function(el){var n=el.dataset.img,e=['jpg','png','jpeg','webp'],i=0,a=el.textContent;(function t(){if(i>=e.length)return;var m=new Image();m.onload=function(){m.alt=a;el.textContent='';el.appendChild(m);el.classList.add('has')};m.onerror=function(){i++;t()};m.src=n+'.'+e[i]})()});
 </script>
 </body>
