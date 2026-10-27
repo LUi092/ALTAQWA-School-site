@@ -51,6 +51,10 @@ ol.steps small span{display:block}
 .callfab svg{width:22px;height:22px;fill:currentColor;flex:none}
 @keyframes pulse{0%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 0 rgba(35,108,34,.55)}70%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 16px rgba(35,108,34,0)}100%{box-shadow:0 6px 18px rgba(19,49,33,.4),0 0 0 0 rgba(35,108,34,0)}}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.callfab{animation:none}}
+.sar{white-space:nowrap}
+td:first-child{white-space:nowrap}
+tr.tot td{font-weight:800;background:color-mix(in srgb,var(--sage) 16%,transparent)}
+.card.disc{margin-top:20px;border-inline-start:6px solid var(--gold)}
 /* home */
 .hero{background:var(--ink);color:#e5e1d5;border-radius:20px;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:36px;align-items:center;margin-bottom:28px}
 .hero h1{font-size:36px;margin-bottom:10px}
@@ -128,19 +132,20 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
 
 <section id="fees" hidden>
  <h2>الرسوم الدراسية</h2>
- <p class="lead">الرسوم السنوية لكل مرحلة.</p>
+ <p class="lead">الرسوم الدراسية لكل فصل، بالريال السعودي.</p>
  <div class="two">
-  <div class="card"><h3>المرحلة المتوسطة</h3><table><tr><th>الفئة</th><th>الرسوم السنوية</th></tr><tr><td>الطالبة السعودية</td><td>—</td></tr><tr><td>الطالبة غير السعودية</td><td>—</td></tr></table></div>
-  <div class="card"><h3>المرحلة الثانوية</h3><table><tr><th>الفئة</th><th>الرسوم السنوية</th></tr><tr><td>الطالبة السعودية</td><td>—</td></tr><tr><td>الطالبة غير السعودية</td><td>—</td></tr></table></div>
+  <div class="card"><h3>المرحلة المتوسطة</h3><table><tr><th>الفصل</th><th>سعودية</th><th>غير سعودية</th></tr><tr><td>الفصل الأول</td><td><span class="sar">7,500 ر.س</span></td><td><span class="sar">8,625 ر.س</span></td></tr><tr><td>الفصل الثاني</td><td><span class="sar">7,500 ر.س</span></td><td><span class="sar">8,625 ر.س</span></td></tr><tr class="tot"><td>الإجمالي</td><td><span class="sar">15,000 ر.س</span></td><td><span class="sar">17,250 ر.س</span></td></tr></table></div>
+  <div class="card"><h3>المرحلة الثانوية</h3><table><tr><th>الفصل</th><th>سعودية</th><th>غير سعودية</th></tr><tr><td>الفصل الأول</td><td><span class="sar">8,000 ر.س</span></td><td><span class="sar">9,200 ر.س</span></td></tr><tr><td>الفصل الثاني</td><td><span class="sar">8,000 ر.س</span></td><td><span class="sar">9,200 ر.س</span></td></tr><tr class="tot"><td>الإجمالي</td><td><span class="sar">16,000 ر.س</span></td><td><span class="sar">18,400 ر.س</span></td></tr></table></div>
  </div>
+ <div class="card disc"><h3>خصم الأخوات</h3><table><tr><th>الفئة</th><th>الخصم لكل طالبة من إجمالي الرسوم</th></tr><tr><td>الأخوات السعوديات</td><td><span class="sar">250 ر.س</span></td></tr><tr><td>الأخوات غير السعوديات</td><td><span class="sar">287.5 ر.س</span></td></tr></table></div>
 </section>
 
 <section id="uniform" hidden>
  <h2>رسوم الزي المدرسي</h2>
  <p class="lead">سعر الزي المدرسي لكل مرحلة.</p>
  <div class="two">
-  <div class="card"><h3>زي المرحلة المتوسطة</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td>—</td></tr></table></div>
-  <div class="card"><h3>زي المرحلة الثانوية</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td>—</td></tr></table></div>
+  <div class="card"><h3>زي المرحلة المتوسطة</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td><span class="sar">207 ر.س</span></td></tr></table></div>
+  <div class="card"><h3>زي المرحلة الثانوية</h3><table><tr><th>البند</th><th>السعر</th></tr><tr><td>الزي المدرسي</td><td><span class="sar">207 ر.س</span></td></tr></table></div>
  </div>
 </section>
 
@@ -151,7 +156,7 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
  <details><summary>هل يوجد اختبار قبول؟</summary><p>الطالبات الدارسات في السفارات والجمعيات الخيرية يُعقد لهن اختبار في آخر مرحلة درسنها، وعلى أساسه يُحدَّد الصف المناسب.</p></details>
  <details><summary>ما مواعيد المقابلات الشخصية؟</summary><p>أثناء الدوام الرسمي.</p></details>
  <details><summary>هل يمكن سداد الرسوم على دفعات؟</summary><p>نعم، يمكن ذلك.</p></details>
- <details><summary>هل يوجد خصم للأخوات؟</summary><p>نعم، يوجد خصم للأخوات.</p></details>
+ <details><summary>هل يوجد خصم للأخوات؟</summary><p>نعم، يوجد خصم للأخوات: 250 ر.س لكل طالبة سعودية، و287.5 ر.س لكل طالبة غير سعودية، من إجمالي الرسوم.</p></details>
  <details><summary>هل المدرسة معتمدة؟</summary><p>نعم، المدرسة حاصلة على الاعتماد الوطني المدرسي من المركز الوطني للتقويم والتميز المدرسي (تميز).</p></details>
  <details><summary>كيف أتواصل مع الوكيلة؟</summary><p>عبر وسائل التواصل الموضحة في صفحة التواصل.</p></details>
 </section>
@@ -175,7 +180,7 @@ var P=[
 {t:'الطالبات المنتقلات من داخل المملكة',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['مراجعة المدرسة السابقة لاستكمال إجراءات النقل'],['العودة إلينا بالأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
 {t:'الطالبات القادمات من خارج المملكة',s:[['مقابلة شخصية مع إحضار الشهادة'],['عند اجتياز المقابلة تُسلَّم الطالبة ورقة القبول من المدرسة'],['معادلة الشهادة في وزارة التعليم'],['إحضار الشهادة بعد المعادلة مع الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]},
 {t:'الطالبات الدارسات في السفارات والجمعيات الخيرية',s:[['تحضر الطالبة شهادة آخر مرحلة دراسية'],['مقابلة شخصية مع إحضار الشهادة'],['بعد اجتياز المقابلة يُعقد اختبار في آخر مرحلة دراسية تمت دراستها، وعلى ضوئه يُحدَّد المستوى والصف المقبولة فيه'],['إحضار الأوراق الثبوتية',D],['إحضار الرسوم الدراسية وسدادها في قسم المالية بالمدرسة'],['مراجعة الوكيلة لاستكمال بقية إجراءات التسجيل']]}];
-var N=[['home','الرئيسية',''],['reg','آلية التسجيل','ثلاثة مسارات حسب حالة الطالبة'],['fees','الرسوم الدراسية','المتوسطة والثانوية'],['uniform','رسوم الزي المدرسي','سعر الزي لكل مرحلة'],['faq','الأسئلة المتكررة','إجابات سريعة'],['contact','وسائل التواصل','الهاتف والموقع والحسابات']];
+var N=[['home','الرئيسية',''],['reg','آلية التسجيل','ثلاثة مسارات حسب حالة الطالبة'],['fees','الرسوم الدراسية','المتوسطة والثانوية وخصم الأخوات'],['uniform','رسوم الزي المدرسي','سعر الزي لكل مرحلة'],['faq','الأسئلة المتكررة','إجابات سريعة'],['contact','وسائل التواصل','الهاتف والموقع والحسابات']];
 var nav=document.getElementById('nav'),tiles=document.getElementById('tiles');
 N.forEach(function(n,i){var b=document.createElement('button');b.textContent=n[1];b.dataset.go=n[0];nav.appendChild(b);
  if(i){var t=document.createElement('button');t.className='tile';t.dataset.go=n[0];t.innerHTML='<b>'+n[1]+'</b><span>'+n[2]+'</span>';tiles.appendChild(t);}});
