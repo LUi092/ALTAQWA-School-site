@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>مدارس التقوى الأهلية الشاملة</title>
+<meta name="description" content="مدارس التقوى الأهلية الشاملة للبنات: المرحلتان المتوسطة والثانوية. آلية التسجيل والرسوم الدراسية والزي المدرسي ووسائل التواصل. التسجيل مفتوح طوال العام.">
+<meta name="theme-color" content="#133121">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="مدارس التقوى الأهلية الشاملة">
+<meta property="og:description" content="مدارس التقوى الأهلية الشاملة للبنات: المرحلتان المتوسطة والثانوية. آلية التسجيل والرسوم الدراسية والزي المدرسي ووسائل التواصل. التسجيل مفتوح طوال العام.">
+<meta property="og:url" content="https://lui092.github.io/ALTAQWA-School-site/">
+<meta property="og:image" content="https://lui092.github.io/ALTAQWA-School-site/school.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#133121;--cream:#e5e1d5;--green:#236c22;--gold:#96590f;--sage:#779e76;
@@ -55,6 +65,11 @@ ol.steps small span{display:block}
 td:first-child{white-space:nowrap}
 tr.tot td{font-weight:800;background:color-mix(in srgb,var(--sage) 16%,transparent)}
 .card.disc{margin-top:20px;border-inline-start:6px solid var(--gold)}
+.open{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;border:1.5px solid var(--green);border-radius:999px;padding:3px 14px;margin-bottom:14px}
+.hero .open{border-color:#779e76;color:#e5e1d5}
+.open i{width:9px;height:9px;border-radius:50%;background:#3cb83a;animation:dot 1.8s infinite}
+@keyframes dot{0%{box-shadow:0 0 0 0 rgba(60,184,58,.6)}70%{box-shadow:0 0 0 8px rgba(60,184,58,0)}100%{box-shadow:0 0 0 0 rgba(60,184,58,0)}}
+@media(prefers-reduced-motion:reduce){.open i{animation:none}}
 /* home */
 .hero{background:var(--ink);color:#e5e1d5;border-radius:20px;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:36px;align-items:center;margin-bottom:28px}
 .hero h1{font-size:36px;margin-bottom:10px}
@@ -112,6 +127,7 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
 <section id="home">
  <div class="hero">
   <div>
+   <div class="open"><i></i>التسجيل مفتوح طوال العام</div>
    <h1>مرحبًا بكم في مدارس التقوى الأهلية الشاملة</h1>
    <p>تعرّفي على خطوات التسجيل والرسوم الدراسية والزي المدرسي في مكان واحد.</p>
    <button class="btn" data-go="reg">ابدئي التسجيل</button>
@@ -124,6 +140,7 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
 
 <section id="reg" hidden>
  <h2>آلية التسجيل</h2>
+ <div class="open"><i></i>التسجيل مفتوح طوال العام</div>
  <p class="lead">اختاري حالتك لتظهر لك الخطوات المطلوبة بالترتيب.</p>
  <div class="tabs" id="tabs"></div>
  <h3 id="ptitle"></h3>
@@ -152,6 +169,7 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
 <section id="faq" hidden>
  <h2>الأسئلة المتكررة</h2>
  <p class="lead">إجابات على أكثر الأسئلة التي تصلنا.</p>
+ <details><summary>متى يبدأ التسجيل؟</summary><p>التسجيل مفتوح طوال العام.</p></details>
  <details><summary>ما الأوراق المطلوبة للتسجيل؟</summary><p>للطالبة السعودية: هوية الطالبة وهوية ولي الأمر وشهادة آخر مرحلة. لغير السعودية: جواز سفر الطالبة وجواز سفر ولي الأمر مع الشهادة.</p></details>
  <details><summary>هل يوجد اختبار قبول؟</summary><p>الطالبات الدارسات في السفارات والجمعيات الخيرية يُعقد لهن اختبار في آخر مرحلة درسنها، وعلى أساسه يُحدَّد الصف المناسب.</p></details>
  <details><summary>ما مواعيد المقابلات الشخصية؟</summary><p>أثناء الدوام الرسمي.</p></details>
@@ -165,7 +183,7 @@ footer{background:var(--ink);color:#779e76;text-align:center;padding:18px;font-s
  <h2>وسائل التواصل</h2>
  <p class="lead">يسعدنا استقبال استفساراتكم.</p>
  <div class="cg">
-  <div><b>الهاتف</b><a href="tel:0126320303" dir="ltr">0126320303</a><br><a href="tel:0126326947" dir="ltr">0126326947</a></div><div><b>الجوال</b><a href="tel:0235513055" dir="ltr">0235513055</a></div><div><b>البريد الإلكتروني</b><a href="mailto:E-ALTAQWA@HOTMAIL.COM" dir="ltr">E-ALTAQWA@HOTMAIL.COM</a></div><div><b>العنوان</b>عنوان المدرسة</div><div><b>حسابنا على إكس</b><a href="https://x.com/TAKWASCHOOL" target="_blank" rel="noopener" dir="ltr">@TAKWASCHOOL</a></div>
+  <div><b>الهاتف</b><a href="tel:0126320303" dir="ltr">0126320303</a><br><a href="tel:0126326947" dir="ltr">0126326947</a></div><div><b>الجوال</b><a href="tel:0235513055" dir="ltr">0235513055</a></div><div><b>البريد الإلكتروني</b><a href="mailto:E-ALTAQWA@HOTMAIL.COM" dir="ltr">E-ALTAQWA@HOTMAIL.COM</a></div><div><b>حسابنا على إكس</b><a href="https://x.com/TAKWASCHOOL" target="_blank" rel="noopener" dir="ltr">@TAKWASCHOOL</a></div>
  </div>
  <iframe class="map" title="موقع المدرسة على الخريطة" style="width:100%;border:0;border-radius:12px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.3463207842615!2d39.22379321909199!3d21.4941507387898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3ce66caf74677%3A0x68797052d8c22c91!2z2YXYr9ix2LPYqSDYp9mE2KrZgtmI2Ykg2KfZhNij2YfZhNmK2Kkg2YXYqtmI2LPYtyDYq9in2YbZiNmKINmE2YTYqNmG2KfYqg!5e0!3m2!1sar!2ssa!4v1792966182918!5m2!1sar!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
